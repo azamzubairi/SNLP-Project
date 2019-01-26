@@ -14,12 +14,11 @@ def get_term_dict(title, terms_list):
 
     if text.count > 0:
         for term in terms_list:
-            if term != "":
+            if term != "" and term != title:
                 count = text.count(term)
                 count_dict[term] = count
 
         counts = count_dict.values()
-        print count_dict
         return count_dict
 
 
