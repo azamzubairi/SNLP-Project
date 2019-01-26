@@ -9,7 +9,11 @@ import os
 if(os.path.isfile('result.ttl')):
     os.unlink('result.ttl')
 
-nlp = spacy.load('ner_model_windows')
+
+if sys.platform == 'win32':
+    nlp = spacy.load('ner_model_windows')
+else:
+    nlp = spacy.load('ner_model')
 
 if (sys.argv[1] == '-f'):
     with open(sys.argv[2]) as file:
