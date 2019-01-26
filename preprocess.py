@@ -4,7 +4,7 @@ import spacy
 import WikipediaExtractor
 import write_to_file
 
-nlp = spacy.load('xx_ent_wiki_sm')
+nlp = spacy.load('ner_model/')
 
 with open("train.tsv") as file:
     results = file.read()
@@ -18,8 +18,9 @@ for entities in data:
     text = unicode(fact_statement, 'latin-1')
     doc = nlp(text)
     ents = [e.text for e in doc.ents]
+    print(ents)
 
-    if e.label_ == "PER" or e.label_ == "ORG":
+    if e.label_ == "SUB" or e.label_ == "OBJ":
         dic = WikipediaExtractor.get_term_dict(e.text, ents)
         truth_value = WikipediaExtractor.check_existence(dic)
         write_to_file.write_to_file(fact_id, truth_value)

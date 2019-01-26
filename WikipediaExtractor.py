@@ -10,7 +10,7 @@ def get_term_dict(title, terms_list):
     except:
         return count_dict
 
-    text = unicodedata.normalize('NFKD', page.content).encode('ascii', 'ignore')
+    text = unicodedata.normalize('NFKD', page.summary).encode('ascii', 'ignore')
 
     if text.count > 0:
         for term in terms_list:
@@ -19,6 +19,7 @@ def get_term_dict(title, terms_list):
                 count_dict[term] = count
 
         counts = count_dict.values()
+        print count_dict
         return count_dict
 
 
