@@ -3,12 +3,18 @@ import StringIO
 import spacy
 import WikipediaExtractor
 import write_to_file
+import sys
+import os
+
+if(os.path.isfile('result.ttl')):
+    os.unlink('result.ttl')
 
 nlp = spacy.load('ner_model/')
 
-with open("train.tsv") as file:
-    results = file.read()
-    data = list(csv.DictReader(StringIO.StringIO(results), delimiter='\t'))
+if (sys.argv[1] == '-f'):
+    with open(sys.argv[2]) as file:
+        results = file.read()
+        data = list(csv.DictReader(StringIO.StringIO(results), delimiter='\t'))
 
 for entities in data:
 
