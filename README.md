@@ -1,4 +1,4 @@
-# SNLP MiniProject 
+# SNLP Fact Checker
 
 Build a corpus-driven fact-checking engine, which returns a confidence
 value between -1 (fact is false) and +1 (fact is true) given a fact from
