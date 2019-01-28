@@ -29,7 +29,7 @@ DBpedia
 ## Prerequisites
 Python 2.7 must be installed on the system and for MacOS a virtual environment is also needed. (To create a virtual environment on Mac follow the tutorial [here](http://exponential.io/blog/2015/02/10/install-virtualenv-and-virtualenvwrapper-on-mac-os-x/))
 
-Clone or Download the repo onto your system. Go to the project directory and run
+Clone or Download the repo on your system. Go to the project directory and run
 
 ```bash
 pip install -r requirements.txt
