@@ -4,20 +4,14 @@ Build a corpus-driven fact-checking engine, which returns a confidence
 value between -1 (fact is false) and +1 (fact is true) given a fact from
 DBpedia
 
-## Contributors
-Group Name: 3 Leute
-- Azam Zubairi
-- Asher Ahsan
-- Asjad Sohail
-
 ## Appraoch
-- Load a custom model we have trained for NER.(To train the model we have used the [train_ner.py](https://github.com/explosion/spaCy/blob/master/examples/training/train_ner.py) script by Spacy)
-- Extract statements from the data file 
+- Load a custom model we have trained for NER (to train the model we have used the [train_ner.py]) (https://github.com/explosion/spaCy/blob/master/examples/training/train_ner.py) script by Spacy).
+- Extract statements from the data file.
 - Feed it to the model. The model extracts Subject(SUB) and Objects(OBJ) from the statements.
 - Query the extracted Subject from the statement on wikipedia and get the page text.
-- Check if Objects appear in the wikipedia text
-- If all Objects appear in text then assign 1 Truth Value else assign -1 Truth Value
-- Write results in results.ttl file
+- Check if Objects appear in the wikipedia text.
+- If all Objects appear in text then assign 1 Truth Value else assign -1 Truth Value.
+- Write results in results.ttl file.
 
 ## Example
 
@@ -48,3 +42,9 @@ pip install -r requirements.txt
 python preprocess.py -f test.tsv
 ```
 - Result will be written into the result.ttl file.
+
+## Contributors
+Group Name: 3 Leute
+- Azam Zubairi
+- Asher Ahsan
+- Asjad Sohail
