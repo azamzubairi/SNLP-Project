@@ -20,7 +20,7 @@ DBpedia
 ```
 - Extracted Entities by Model:
 `
-[('Charles Édouard Guillaume',SUB), ('Nobel Prize',OBJ), ('Literature',OBJ)
+[('Charles Édouard Guillaume',SUB), ('Nobel Prize',OBJ), ('Literature',OBJ)]
 `
 - wikipedia.search("Charles Édouard Guillaume").
 - Check if `'Nobel Prize'` and `'Literature'` occur in text.
