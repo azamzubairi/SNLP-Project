@@ -26,7 +26,6 @@ DBpedia
 - Check if `'Nobel Prize'` and `'Literature'` occur in text.
 - If both occur then assign 1 else assign -1.
 
-
 ## Prerequisites
 Python 2.7 must be installed on the system and for MacOS a virtual environment is also needed. (To create a virtual environment on Mac follow the tutorial [here](http://exponential.io/blog/2015/02/10/install-virtualenv-and-virtualenvwrapper-on-mac-os-x/))
 
