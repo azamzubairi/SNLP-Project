@@ -33,13 +33,13 @@ for entities in data:
     for entity in doc.ents:
         if entity.label_ == "SUB":
             ents = [e.text for e in doc.ents]
-            print "Processing Statement "+count
+            print "Processing Statement "+str(count)
             dic = WikipediaExtractor.get_term_dict(entity.text, ents)
             truth_value = WikipediaExtractor.check_existence(dic)
             write_to_file.write_to_file(fact_id, truth_value)
-            print "Statement "+count+" assigned Truth Value: "+truth_value
+            print "Statement "+str(count)+" assigned Truth Value: "+str(truth_value)
             count = count + 1
 
 
-print "Total Statements processed: "+count
+print "Total Statements processed: "+str(count)
 print "Results written to result.ttl file"
