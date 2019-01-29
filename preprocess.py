@@ -11,8 +11,10 @@ if(os.path.isfile('result.ttl')):
 
 
 if sys.platform == 'win32':
+    print("Using ner_model_windows....")
     nlp = spacy.load('ner_model_windows')
 else:
+    print("Using ner_model....")
     nlp = spacy.load('ner_model')
 
 if (sys.argv[1] == '-f'):
@@ -27,12 +29,17 @@ for entities in data:
 
     text = unicode(fact_statement, 'latin-1')
     doc = nlp(text)
-
+    count = 1
     for entity in doc.ents:
         if entity.label_ == "SUB":
             ents = [e.text for e in doc.ents]
+            print "Processing Statement "+count
             dic = WikipediaExtractor.get_term_dict(entity.text, ents)
             truth_value = WikipediaExtractor.check_existence(dic)
             write_to_file.write_to_file(fact_id, truth_value)
-            print dic
-            print truth_value
+            print "Statement "+count+" assigned Truth Value: "+truth_value
+            count = count + 1
+
+
+print "Total Statements processed: "+count
+print "Results written to result.ttl file"
