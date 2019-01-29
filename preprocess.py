@@ -17,6 +17,8 @@ else:
     print("Using ner_model....")
     nlp = spacy.load('ner_model')
 
+count = 1
+
 if (sys.argv[1] == '-f'):
     with open(sys.argv[2]) as file:
         results = file.read()
@@ -29,7 +31,7 @@ for entities in data:
 
     text = unicode(fact_statement, 'latin-1')
     doc = nlp(text)
-    count = 1
+
     for entity in doc.ents:
         if entity.label_ == "SUB":
             ents = [e.text for e in doc.ents]
