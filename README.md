@@ -42,6 +42,25 @@ python preprocess.py -f test.tsv
 ```
 - Result will be written into the result.ttl file.
 
+## Statements which fail
+
+##### True Statements which return False
+
+- Albert Einstein published the Thoery of Relativity.
+- Wasim Akram played Cricket in Australia.
+- Wright Brothers invented the airplane.
+- J.K. Rowling wrote Harry Potter.
+- Isaac Newton discovered gravity.
+
+##### False Statements which return True
+
+- Arthur Conan Doyle did not write Sherlock Holmes.
+- The capital of Pakistan is Karachi.
+- Cristiano Ronaldo was born in England.
+- Bill Gates death place is Seattle.
+- Barack Obama was born in Washington.
+
+
 ## Contributors
 Group Name: 3 Leute
 - Azam Zubairi
